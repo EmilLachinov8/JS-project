@@ -1,0 +1,275 @@
+html {
+  height: 100%;
+  width: 100%;
+}
+
+.wrapper {
+  width: 100%;
+  margin: 0 auto;
+  max-width: 1290px;
+  z-index: 10;
+}
+
+.body {
+  background: url('./img/Background.png');
+}
+
+.page__header {
+  margin: 16vh 0 2vh 12vh;
+  font: 600 57px/66px 'robotobold', sans-serif;
+  color: #fff;
+}
+
+.page__describtion {
+  margin: 0 0 5vh 13vh;
+  font: 400 19px/22px 'robotothin', sans-serif;
+  color: #fff;
+}
+
+.page__levels {
+  list-style: none;
+}
+
+.page__levels_element {
+  margin: 0 0 3vh 13vh;
+  position: relative;
+  font: 600 50px/59px 'roboto', sans-serif;
+  cursor: pointer;
+  color: #fff;
+}
+
+.page__levels_element:hover {
+  margin: 0 0 3vh 13vh;
+  color: #e41417;;
+}
+
+.page__levels_element-active::before {
+  width: 18px;
+  height: 18px;
+  content: "";
+  background-color: #e41417;
+  position: absolute;
+  top: calc(50% - 9px);
+  left: -45px;
+  transform: rotate(45deg);
+}
+
+.page__footer {
+  display: flex;
+  flex-flow: wrap;
+  flex-direction: row;
+  align-items: center;
+}
+
+.page__button {
+  margin: 0 17% 0 10vh;
+  padding: 2.5% 6% 2.5% 6%;
+  color: #fff;
+  background-color: #e41417;
+  font: 600 32px/37px 'roboto', sans-serif;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.card-1 {
+  display: inline;
+  transform: rotate(11.9deg);
+}
+
+.card-2 {
+  display: inline;
+  transform: rotate(39.26deg);
+} 
+
+.game {
+  display: flex;
+  height: 100vh;
+  width: 730px;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 0 auto;
+}
+
+.width {
+  width: 1210px;
+}
+
+.game-card {
+  background-color: transparent;
+  width: 218px;
+  height: 341px;
+  perspective: 1000px;
+  margin: 32px 24px 24px 0;
+}
+
+.game-card:hover {
+  animation: move;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease;
+}
+
+@keyframes move {
+  50% {
+    transform: rotate(-3.08deg) translateY(-30px);
+  }
+  100% {
+    transform: rotate(0deg) translateY(-22px);
+  }
+}
+
+.game-card__inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+.active {
+  transform: rotateY(180deg);
+}
+
+.game-card__front, .game-card__back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden; 
+  backface-visibility: hidden;
+}
+
+.game-card__back {
+  transform: rotateY(180deg);
+}
+
+.visible {
+  display: none;
+}
+
+@media (min-width: 1800px) {
+  .page__header {   
+    font: 600 100px/110px 'robotobold', sans-serif;
+  }
+  
+  .page__describtion {
+    font: 400 35px/42px 'robotothin', sans-serif;
+  }
+  
+  .page__levels {
+    font: 600 70px/89px 'roboto', sans-serif;
+  }
+  
+  .page__button {
+    margin: 0 93vh 0 10vh;
+    font: 600 50px/67px 'roboto', sans-serif;
+  }
+}
+
+@media (max-width: 1799px) {
+  .page__header {
+    font: 600 50px/62px 'robotobold', sans-serif;
+  }
+    
+  .page__describtion {
+    font: 400 22px/32px 'robotothin', sans-serif;
+  }
+    
+  .page__levels {
+    font: 600 40px/49px 'roboto', sans-serif;
+  }
+    
+  .page__button {
+    margin: 0 43vh 0 10vh;
+    font: 600 24px/37px 'roboto', sans-serif;
+  }
+}
+
+@media (max-width: 1200px) {
+  .page__header {
+    font: 600 50px/62px 'robotobold', sans-serif;
+  }
+      
+  .page__describtion {
+    font: 400 22px/32px 'robotothin', sans-serif;
+  }
+      
+  .page__level {
+    font: 600 34px/39px 'roboto', sans-serif;
+  }
+      
+  .page__button {
+    margin: 0 35vh 0 10vh;
+    font: 600 24px/27px 'roboto', sans-serif;
+  }
+
+  .card-1, 
+  .card-2 {
+    width: 16vw;
+  }
+
+  
+}
+
+@media (max-width: 900px) {
+  .page__header {
+    font: 600 40px/52px 'robotobold', sans-serif;
+  }
+      
+  .page__describtion {
+    font: 400 15px/22px 'robotothin', sans-serif;
+  }
+      
+  .page__levels {
+    font: 600 24px/29px 'roboto', sans-serif;
+  }
+      
+  .page__button {
+    margin: 0 35vh 0 10vh;
+    font: 600 14px/20px 'roboto', sans-serif;
+  }
+
+  .card-1, 
+  .card-2 {
+    width: 16vw;
+  }
+}
+
+@media (max-width: 750px) {
+  .page__header {
+    font: 600 30px/42px 'robotobold', sans-serif;
+  }
+      
+  .page__describtion {
+    font: 400 12px/14px 'robotothin', sans-serif;
+  }
+      
+  .page__levels {
+    display: flex;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    font: 600 24px/29px 'roboto', sans-serif;
+    width: 35%;
+    padding-right: 6vh;
+  }
+      
+  .page__levels_element-active::before {
+    width: 12px;
+    height: 12px;
+  }
+    
+  .page__button {
+    display: flex;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    font: 600 14px/20px 'roboto', sans-serif;
+  }
+
+  .card-1, 
+  .card-2 {
+    display: none;
+  }
+}
