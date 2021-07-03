@@ -71,16 +71,26 @@ button.addEventListener('click', () => {
   let hard = [1, 0, 0, 0, 0, 0, 0, 0, 0, 0];
   if (target.innerHTML === 'Простой' || target.innerHTML === undefined) {
     array = easy;
+    pageGame.classList.add('easy');
+    document.body.classList.add('body');
+    pageGame.classList.remove('medium');
+    pageGame.classList.remove('hard');
   }
   if (target.innerHTML === 'Средний') {
     array = middle;
+    pageGame.classList.add('medium');
+    document.body.classList.add('body');
+    pageGame.classList.remove('easy');
+    pageGame.classList.remove('hard');
   }
   if (target.innerHTML === 'Сложный') {
     array = hard;
-    pageGame.classList.add('width');
+    pageGame.classList.add('hard');
+    document.body.classList.add('body');
+    pageGame.classList.remove('easy');
+    pageGame.classList.remove('medium');
   }
   shuffle(array);
-  console.log(array);
   startGame.classList.add('visible');
   pageGame.classList.remove('visible');
   createCard(array);
@@ -97,11 +107,12 @@ document.onclick = function (event) {
     active.classList.toggle('active');
     startGame.classList.remove('visible');
     pageGame.classList.add('visible');
-    pageGame.classList.remove('width');
+
 
 
     while (pageGame.firstChild) {
       pageGame.removeChild(pageGame.firstChild);
+      document.body.classList.remove('body');
     }
   }
   active = document.querySelector('.active');
